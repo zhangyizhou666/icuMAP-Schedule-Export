@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>icuMAP Schedule Export</title>
+  <style>
+    body {
+      width: 350px;
+      padding: 20px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      margin: 0;
+    }
+    
+    h1 {
+      font-size: 20px;
+      margin: 0 0 15px 0;
+      color: #333;
+    }
+    
+    .info {
+      background: #f0f7ff;
+      padding: 12px;
+      border-radius: 6px;
+      margin-bottom: 15px;
+      font-size: 13px;
+      color: #0066cc;
+    }
+    
+    .course-list {
+      max-height: 200px;
+      overflow-y: auto;
+      margin-bottom: 15px;
+      border: 1px solid #e0e0e0;
+      border-radius: 6px;
+      padding: 10px;
+    }
+    
+    .course-item {
+      padding: 8px;
+      margin-bottom: 8px;
+      background: #f9f9f9;
+      border-radius: 4px;
+      font-size: 12px;
+    }
+    
+    .course-code {
+      font-weight: bold;
+      color: #0066cc;
+    }
+    
+    .course-details {
+      margin-top: 4px;
+      color: #666;
+    }
+    
+    button {
+      width: 100%;
+      padding: 12px;
+      background: #0066cc;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    
+    button:hover {
+      background: #0052a3;
+    }
+    
+    button:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+    }
+    
+    .error {
+      background: #fff0f0;
+      color: #cc0000;
+      padding: 12px;
+      border-radius: 6px;
+      margin-bottom: 15px;
+      font-size: 13px;
+    }
+    
+    .success {
+      background: #f0fff0;
+      color: #008800;
+      padding: 12px;
+      border-radius: 6px;
+      margin-bottom: 15px;
+      font-size: 13px;
+    }
+    
+    .settings {
+      margin-bottom: 15px;
+    }
+    
+    .settings label {
+      display: block;
+      margin-bottom: 5px;
+      font-size: 13px;
+      color: #333;
+    }
+    
+    .settings input {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 13px;
+      box-sizing: border-box;
+    }
+  </style>
+</head>
+<body>
+  <h1>📅 icuMAP Schedule Export</h1>
+  
+  <div id="message"></div>
+  
+  <div id="courseList" class="course-list" style="display: none;"></div>
+  
+  <div class="settings">
+    <label for="semesterStart">Term Start Date:</label>
+    <input type="date" id="semesterStart" value="2025-09-15">
+  </div>
+  
+  <div class="settings">
+    <label for="semesterEnd">Term End Date:</label>
+    <input type="date" id="semesterEnd" value="2025-11-19">
+  </div>
+  
+  <button id="exportBtn">Download Schedule (.ics)</button>
+  
+  <script src="popup.js"></script>
+</body>
+</html>
+
